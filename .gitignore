@@ -1,0 +1,63 @@
+# Project-specific exclusions
+githublink_aerialobjectclassification.txt
+recordingaerialobjectclassification.mp4
+
+# Large model files (exceed GitHub 100MB limit)
+models/best_custom_cnn_model.keras
+models/best_mobilenet_weights.weights.h5
+models/best_mobilenetv2_model.keras
+
+# Video files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Streamlit
+.streamlit/secrets.toml
+
+# OS files
+Thumbs.db
+.DS_Store
