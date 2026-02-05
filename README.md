@@ -1,6 +1,6 @@
 # 🦅 Aerial Object Classification & Detection
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.13%2B-orange)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.28%2B-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -100,9 +100,11 @@ The **MobileNetV2** model (recommended) achieves:
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- **Python 3.12** (Required for TensorFlow compatibility)
 - pip package manager
 - (Optional) CUDA-capable GPU for faster training
+
+> ⚠️ **Important:** This project requires **Python 3.12** (or Python 3.11). Python 3.13+ is not yet supported by TensorFlow. If you have a newer Python version installed, you'll need to install Python 3.12 alongside it and use it to create the virtual environment.
 
 ### ⚠️ Important Note About Model Files
 
@@ -130,17 +132,30 @@ git clone https://github.com/MZ-314/aerial-object-classification.git
 cd aerial-object-classification
 ```
 
-2. **Create Virtual Environment** (Recommended)
+2. **Create Virtual Environment with Python 3.12** (Required)
 
 ```bash
-# Windows
-python -m venv venv
+# First, verify Python 3.12 is installed
+py --list
+# Should show Python 3.12 in the list
+
+# Windows - Create venv with Python 3.12
+py -3.12 -m venv venv
 venv\Scripts\activate
 
-# macOS/Linux
-python3 -m venv venv
+# macOS/Linux - Create venv with Python 3.12
+python3.12 -m venv venv
 source venv/bin/activate
+
+# Verify you're using Python 3.12
+python --version
+# Should show: Python 3.12.x
 ```
+
+**If you don't have Python 3.12:**
+- Download from: https://www.python.org/downloads/release/python-31210/
+- Install it (you can keep other Python versions)
+- Then create the venv using `py -3.12 -m venv venv`
 
 3. **Install Dependencies**
 

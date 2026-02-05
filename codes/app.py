@@ -6,8 +6,8 @@ import os
 
 # --- 1. Configuration and Model Loading ---
 
-# Updated path to point to models directory
-MODEL_PATH = os.path.join('models', 'best_mobilenetv2_model.keras')
+# Updated path to point to models directory (relative to project root)
+MODEL_PATH = os.path.join('..', 'models', 'best_mobilenetv2_model.keras')
 CLASS_NAMES = ['bird', 'drone']
 IMG_SIZE = (224, 224) 
 
@@ -96,7 +96,7 @@ if model is not None:
         
         with col1:
             image = Image.open(uploaded_file)
-            st.image(image, caption='Uploaded Image', use_column_width=True)
+            st.image(image, caption='Uploaded Image', use_container_width=True)
         
         with col2:
             # Add a button to trigger prediction
