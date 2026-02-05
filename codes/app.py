@@ -3,11 +3,16 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 import os
+from pathlib import Path
 
 # --- 1. Configuration and Model Loading ---
 
-# Updated path to point to models directory (relative to project root)
-MODEL_PATH = os.path.join('..', 'models', 'best_mobilenetv2_model.keras')
+# Get the directory where this script is located
+SCRIPT_DIR = Path(__file__).parent.absolute()
+# Go up one level to project root, then into models
+PROJECT_ROOT = SCRIPT_DIR.parent
+MODEL_PATH = PROJECT_ROOT / 'models' / 'best_mobilenetv2_model.keras'
+
 CLASS_NAMES = ['bird', 'drone']
 IMG_SIZE = (224, 224) 
 
@@ -15,7 +20,7 @@ IMG_SIZE = (224, 224)
 def load_model():
     """Loads the model from the specified path."""
     try:
-        model = tf.keras.models.load_model(MODEL_PATH)
+        model = tf.keras.models.load_model(str(MODEL_PATH))
         return model
     except Exception as e:
         st.error(f"Error loading model: {e}. Ensure '{MODEL_PATH}' exists.")
@@ -140,7 +145,7 @@ if model is not None:
 
 else:
     st.error("❌ Cannot run classification - model failed to load. Please check the model path.")
-    st.info("Expected model location: `models/best_mobilenetv2_model.keras`")
+    st.info(f"Expected model location: `{MODEL_PATH}`")
 
 # Footer
 st.markdown("---")
